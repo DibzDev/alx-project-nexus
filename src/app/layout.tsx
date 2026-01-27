@@ -1,4 +1,5 @@
 import "./globals.css";
+import Header from "@/components/layout/Header";
 
 export const metadata = {
   title: "Kheir Electronics",
@@ -13,7 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white text-gray-900">
-        {children}
+        <Header />
+        <main className="mx-auto max-w-7xl px-6 py-8">
+          {children}
+        </main>
       </body>
     </html>
   );

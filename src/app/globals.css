@@ -9,3 +9,72 @@ body {
 }
 
 /* Utility overrides or custom styles can go here */
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  background: linear-gradient(
+      rgba(16, 24, 32, 0.6),
+      rgba(16, 24, 32, 0.6)
+    ),
+    url("/images/hero-placeholder.jpg") center / cover no-repeat;
+  color: #ffffff;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #e5e5e5;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #f1c40f;
+  color: #101820;
+}
+
+.btn.primary:hover {
+  background-color: #ffffff;
+}
+
+.btn.secondary {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn.secondary:hover {
+  background-color: #ffffff;
+  color: #101820;
+}

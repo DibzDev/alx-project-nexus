@@ -55,3 +55,24 @@ export default function HomePage() {
     </div>
   </div>
 </section>
+{/* Why Choose Us section */}
+<section className="why-us">
+  <h2>Why Choose Kheir Electronics?</h2>
+
+  <div className="why-grid">
+    <div className="why-card">
+      <h3>🚚 Fast Delivery</h3>
+      <p>Quick and reliable delivery across the country.</p>
+    </div>
+
+    <div className="why-card">
+      <h3>✅ Genuine Products</h3>
+      <p>We only sell original and certified electronics.</p>
+    </div>
+
+    <div className="why-card">
+      <h3>📞 Customer Support</h3>
+      <p>Friendly support available whenever you need help.</p>
+    </div>
+  </div>
+</section>

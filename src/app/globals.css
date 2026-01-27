@@ -138,3 +138,37 @@ body {
 .product-card button:hover {
   opacity: 0.85;
 }
+
+/* =========================
+   FOOTER SECTION
+========================= */
+.why-us {
+  background: #f7f7f7;
+  padding: 4rem 2rem;
+}
+
+.why-us h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.why-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.why-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.why-card h3 {
+  margin-bottom: 0.8rem;
+}

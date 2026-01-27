@@ -76,3 +76,32 @@ export default function HomePage() {
     </div>
   </div>
 </section>
+
+{/* Footer section */}
+<footer className="footer">
+  <div className="footer-content">
+    <div>
+      <h3>Kheir Electronics</h3>
+      <p>Your trusted electronics store.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Home</li>
+        <li>Products</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>📍 Mombasa, Kenya</p>
+      <p>📞 +254 113 013 792</p>
+    </div>
+  </div>
+
+  <p className="copyright">
+    © {new Date().getFullYear()} Kheir Electronics. All rights reserved.
+  </p>
+</footer>

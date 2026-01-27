@@ -27,3 +27,31 @@ export default function HomePage() {
     </main>
   );
 }
+
+{/* Products section */}
+<section className="products">
+  <h2>Featured Products</h2>
+
+  <div className="product-grid">
+    <div className="product-card">
+      <img src="/images/phone.jpg" alt="Smartphone" />
+      <h3>Smartphone X</h3>
+      <p className="price">KSh 28,000</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div className="product-card">
+      <img src="/images/tv.jpg" alt="Smart TV" />
+      <h3>43” Smart TV</h3>
+      <p className="price">KSh 42,000</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div className="product-card">
+      <img src="/images/laptop.jpg" alt="Laptop" />
+      <h3>Core i5 Laptop</h3>
+      <p className="price">KSh 65,000</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</section>

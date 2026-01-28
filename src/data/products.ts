@@ -12,7 +12,7 @@ export const products: Product[] = [
     id: 1,
     name: "Smart LED TV 43\"",
     price: 38999,
-    image: "/products/tv.jpg",
+    image: "/products/TVS.jpg",
     category: "TVs",
     description: "43-inch Full HD Smart LED TV with vibrant colors."
   },
@@ -20,7 +20,7 @@ export const products: Product[] = [
     id: 2,
     name: "Samsung Galaxy A15",
     price: 21999,
-    image: "/products/phone.jpg",
+    image: "/products/a15.jpg",
     category: "Phones",
     description: "Affordable smartphone with long battery life."
   },

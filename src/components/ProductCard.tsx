@@ -8,14 +8,12 @@ type Props = {
 export default function ProductCard({ product }: Props) {
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition p-4">
-      <div className="relative w-full h-48 mb-4">
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          className="object-contain"
-        />
-      </div>
+      <img
+  src={product.image}
+  alt={product.name}
+  className="w-full h-48 object-contain mb-4"
+/>
+
 
       <h3 className="font-semibold text-lg mb-1">{product.name}</h3>
       <p className="text-sm text-gray-500 mb-2">{product.category}</p>

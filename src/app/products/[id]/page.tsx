@@ -1,53 +1,54 @@
 import { products } from "@/lib/products";
-import Image from "next/image";
-import Link from "next/link";
+import { notFound } from "next/navigation";
 
-interface ProductPageProps {
-  params: {
+type Props = {
+  params: Promise<{
     id: string;
-  };
-}
+  }>;
+};
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = products.find((p) => p.id === params.id);
+export default async function ProductDetailsPage({ params }: Props) {
+  const { id } = await params;
+
+  const product = products.find(
+    (p) => p.id === Number(id)
+  );
 
   if (!product) {
-    return (
-      <div className="p-10 text-center">
-        <h2 className="text-2xl font-semibold">Product not found</h2>
-        <Link href="/" className="text-orange-600 underline mt-4 block">
-          Back to Home
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+    <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10">
+      
+      {/* Product Image */}
       <div>
-        <Image
+        <img
           src={product.image}
           alt={product.name}
-          width={500}
-          height={400}
-          className="rounded-lg object-contain"
+          className="w-full h-96 object-contain"
         />
       </div>
 
+      {/* Product Info */}
       <div>
-        <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-        <p className="text-orange-600 text-xl font-semibold mb-4">
-          {product.price}
-        </p>
-        <p className="text-gray-700 mb-6">{product.description}</p>
+        <h1 className="text-3xl font-bold mb-4">
+          {product.name}
+        </h1>
 
-        <Link
-          href="/"
-          className="inline-block bg-orange-600 text-white px-6 py-3 rounded-md hover:bg-orange-700 transition"
-        >
-          Back to Products
-        </Link>
+        <p className="text-yellow-600 text-2xl font-semibold mb-6">
+          KES {product.price.toLocaleString()}
+        </p>
+
+        <p className="text-gray-700 mb-8">
+          {product.description}
+        </p>
+
+        <button className="bg-yellow-500 text-black px-6 py-3 rounded hover:bg-yellow-600 transition">
+          Add to Cart
+        </button>
       </div>
-    </section>
+
+    </div>
   );
 }

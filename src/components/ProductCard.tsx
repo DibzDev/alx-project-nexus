@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Product } from "@/data/products";
+import { products } from "@/lib/products";
 
 type Props = {
   product: Product;

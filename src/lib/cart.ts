@@ -23,12 +23,15 @@ export function addToCart(product: any) {
 }
 
 export function updateQuantity(id: number, quantity: number) {
-  const cart = getCart().map((item: any) =>
-    item.id === id ? { ...item, quantity } : item
-  );
+  const cart = getCart()
+    .map((item: any) =>
+      item.id === id ? { ...item, quantity } : item
+    )
+    .filter((item: any) => item.quantity > 0); // auto-remove if 0
 
   saveCart(cart);
 }
+
 
 export function removeFromCart(id: number) {
   const cart = getCart().filter((item: any) => item.id !== id);

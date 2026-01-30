@@ -18,20 +18,21 @@ section {
 ========================= */
 
 .hero {
-  min-height: 80vh;
+  min-height: 30vh;
   display: flex;
   align-items: center;
   padding: 6rem 2rem;
   background: linear-gradient(
-      rgba(16, 24, 32, 0.6),
-      rgba(16, 24, 32, 0.6)
+      rgba(16, 24, 32, 0.4),
+      rgba(16, 24, 32, 0.2)
     ),
-    url("/images/hero-placeholder.jpg") center / cover no-repeat;
+    url("/products/hero-appliances.jpg") center / contain no-repeat;
   color: #ffffff;
 }
 
 .hero-content {
   max-width: 700px;
+  align-items: center
 }
 
 .hero h1 {
@@ -39,6 +40,7 @@ section {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
+  align-items: center
 }
 
 .hero p {
@@ -46,6 +48,7 @@ section {
   line-height: 1.6;
   margin-bottom: 2rem;
   color: #e5e5e5;
+  align-items: center
 }
 
 .hero-actions {
@@ -61,6 +64,7 @@ section {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  align-items: center
 }
 
 .btn.primary {
@@ -96,7 +100,7 @@ section {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   gap: 2rem;
 }
 
@@ -114,8 +118,8 @@ section {
 }
 
 .product-card img {
-  width: 100%;
-  height: 200px;
+  width: 10%;
+  height: 10px;
   object-fit: contain;
   margin-bottom: 1rem;
 }

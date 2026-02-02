@@ -5,9 +5,7 @@ export function getCart() {
 
 export function saveCart(cart: any[]) {
   localStorage.setItem("kheir-cart", JSON.stringify(cart));
-  window.dispatchEvent(new Event("cart-updated"));
 }
-
 
 export function addToCart(product: any) {
   const cart = getCart();
@@ -22,18 +20,28 @@ export function addToCart(product: any) {
   saveCart(cart);
 }
 
-export function updateQuantity(id: number, quantity: number) {
+export function increaseQty(id: number) {
+  const cart = getCart().map((item: any) =>
+    item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+  );
+  saveCart(cart);
+}
+
+export function decreaseQty(id: number) {
   const cart = getCart()
     .map((item: any) =>
-      item.id === id ? { ...item, quantity } : item
+      item.id === id ? { ...item, quantity: item.quantity - 1 } : item
     )
-    .filter((item: any) => item.quantity > 0); // auto-remove if 0
+    .filter((item: any) => item.quantity > 0);
 
   saveCart(cart);
 }
 
-
 export function removeFromCart(id: number) {
   const cart = getCart().filter((item: any) => item.id !== id);
   saveCart(cart);
+}
+
+export function clearCart() {
+  localStorage.removeItem("kheir-cart");
 }

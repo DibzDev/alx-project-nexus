@@ -26,7 +26,7 @@ section {
       rgba(16, 24, 32, 0.4),
       rgba(16, 24, 32, 0.2)
     ),
-    url("/products/hero-appliances.jpg") center / contain no-repeat;
+    url("/products/hero-appliances.jpg") center / cover no-repeat;
   color: #ffffff;
 }
 
@@ -98,31 +98,19 @@ section {
   margin-bottom: 2.5rem;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  gap: 2rem;
-}
 
 .product-card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
 }
+
 
 .product-card:hover {
   transform: translateY(-5px);
 }
 
-.product-card img {
-  width: 10%;
-  height: 10px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-}
 
 .product-card h3 {
   margin: 0.5rem 0;

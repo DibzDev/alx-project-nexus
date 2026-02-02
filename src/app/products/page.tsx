@@ -23,14 +23,17 @@ export default function ProductDetails({
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
       <div className="grid md:grid-cols-2 gap-10">
-        <div className="flex justify-center">
+        
+        {/* Image */}
+        <div className="flex justify-center items-center">
           <img
             src={product.image}
             alt={product.name}
-            className="max-h-80 object-contain"
+            className="max-h-80 max-w-full object-contain"
           />
         </div>
 
+        {/* Info */}
         <div>
           <h1 className="text-3xl font-bold mb-4">
             {product.name}
@@ -41,7 +44,8 @@ export default function ProductDetails({
           </p>
 
           <p className="text-gray-600 mb-6">
-            {product.description || "High quality electronics you can trust."}
+            {product.description ||
+              "High quality electronics you can trust."}
           </p>
 
           <button

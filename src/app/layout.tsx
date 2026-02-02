@@ -1,10 +1,11 @@
 import "./globals.css";
-import Header from "@/components/layout/Header";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Kheir Electronics",
   description: "Modern electronics store built with Next.js",
 };
+
 
 export default function RootLayout({
   children,
@@ -13,12 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-gray-900">
-        <Header />
-        <main className="mx-auto max-w-7xl px-6 py-8">
-          {children}
-        </main>
+      <body>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
 }
+

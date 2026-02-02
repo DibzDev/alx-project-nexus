@@ -3,8 +3,10 @@
 import {
   getCart,
   removeFromCart,
-  updateQuantity,
+  increaseQty,
+  decreaseQty,
 } from "@/lib/cart";
+
 import { useEffect, useState } from "react";
 
 export default function CartPage() {
@@ -60,36 +62,29 @@ export default function CartPage() {
 
               {/* Quantity controls */}
               <div className="flex items-center gap-3 mt-2">
-                <button
-                  className="px-3 py-1 border rounded"
-                  onClick={() => {
-                    if (item.quantity > 1) {
-                      updateQuantity(
-                        item.id,
-                        item.quantity - 1
-                      );
-                      setCart(getCart());
-                    }
-                  }}
-                >
-                  −
-                </button>
+  <button
+    onClick={() => {
+      decreaseQty(item.id);
+      setCart(getCart());
+    }}
+    className="px-2 border rounded"
+  >
+    −
+  </button>
 
-                <span>{item.quantity}</span>
+  <span>{item.quantity}</span>
 
-                <button
-                  className="px-3 py-1 border rounded"
-                  onClick={() => {
-                    updateQuantity(
-                      item.id,
-                      item.quantity + 1
-                    );
-                    setCart(getCart());
-                  }}
-                >
-                  +
-                </button>
-              </div>
+  <button
+    onClick={() => {
+      increaseQty(item.id);
+      setCart(getCart());
+    }}
+    className="px-2 border rounded"
+  >
+    +
+  </button>
+</div>
+
 
               <p className="text-yellow-600 font-semibold mt-2">
                 KES{" "}
@@ -115,9 +110,13 @@ export default function CartPage() {
           Total: KES {total.toLocaleString()}
         </p>
 
-        <button className="mt-4 bg-yellow-500 px-6 py-3 rounded hover:bg-yellow-600">
-          Checkout (Mock)
-        </button>
+        <a
+  href="/checkout"
+  className="inline-block mt-4 bg-yellow-500 px-6 py-3 rounded hover:bg-yellow-600"
+>
+  Checkout
+</a>
+
       </div>
     </div>
   );

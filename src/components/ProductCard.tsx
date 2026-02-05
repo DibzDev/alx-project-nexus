@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Product } from "@/lib/products";
+
 
 type Props = {
   product: Product;

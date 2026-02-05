@@ -1,4 +1,13 @@
-export const products = [
+export type Product = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  description?: string;
+};
+
+export const products: Product[] = [
   {
     id: 1,
     name: 'Smart LED TV 43"',

@@ -1,81 +1,164 @@
-# ALX Project Nexus - ProDev Frontend Engineering Documentation
+# Kheir Electronics
 
-## Overview
-This repository serves as a comprehensive documentation hub for my learnings in the ALX ProDev Frontend Engineering program. It consolidates key concepts, technologies, and best practices acquired throughout the program.
+## Project Overview
 
-## Program Overview
-The ProDev Frontend Engineering program is an intensive curriculum designed to equip learners with modern frontend development skills, focusing on industry relevant technologies and collaborative project development.
+**Kheir Electronics** is a modern electronics product catalog web application built as part of the **ALX Project Nexus**. The project demonstrates practical frontend engineering skills using **Next.js**, **React**, and **Tailwind CSS**, with a strong focus on clean project structure, reusable components, and scalable data handling.
 
-## Major Learnings
-
-### Key Technologies Covered
-- **Next.js**: React framework for production-grade applications
-- **TailwindCSS**: Utility-first CSS framework for rapid UI development
-- **TypeScript**: Typed superset of JavaScript for improved code quality
-- **GraphQL**: Query language for APIs with efficient data fetching
-- **API Integration**: Connecting frontend applications with backend services
-- **System Design & Analysis**: Architectural planning and optimization
-- **Progressive Web Apps (PWA)**: Building installable, offline-capable web applications
-
-### Important Frontend Development Concepts
-- Component-based architecture and reusability
-- Server-side rendering (SSR) and static site generation (SSG)
-- State management strategies
-- Responsive design principles
-- Performance optimization techniques
-- Accessibility standards (a11y)
-- Testing methodologies
-
-### Challenges Faced & Solutions Implemented
-1. **Challenge**: State management complexity in large applications
-   **Solution**: Implemented centralized state management using Context API and Zustand
-
-2. **Challenge**: API integration and type safety
-   **Solution**: Used TypeScript interfaces with GraphQL code generation
-
-3. **Challenge**: Performance optimization
-   **Solution**: Implemented code splitting, lazy loading, and image optimization
-
-4. **Challenge**: Collaborative development workflows
-   **Solution**: Established Git branching strategies and code review processes
-
-### Best Practices
-- **Code Organization**: Modular architecture with clear separation of concerns
-- **Type Safety**: Comprehensive TypeScript implementation
-- **Performance**: Lighthouse optimization and bundle size management
-- **Collaboration**: Consistent code formatting and documentation standards
-- **Testing**: Comprehensive test coverage with Jest and React Testing Library
-
-### Personal Takeaways
-1. The importance of systematic design before implementation
-2. Value of type safety in reducing runtime errors
-3. Efficiency gains from utility first CSS approaches
-4. Critical role of collaboration in full stack development
-5. Continuous learning as a core developer competency
-
-## Collaboration
-This project emphasizes collaboration between:
-- **Frontend Learners**: Knowledge sharing and peer programming
-- **Backend Learners**: API integration and full stack project development
-
-**Primary Collaboration Channel**: `#ProDevProjectNexus` on Discord
-
-## Repository Structure
-alx-project-nexus/
-├── README.md # This documentation
-├── docs/ # Detailed documentation
-├── examples/ # Code examples
-└── resources/ # Learning resources and references
-
-
-## How to Use This Repository
-1. Browse through documentation sections
-2. Reference code examples for implementation guidance
-3. Use as a study guide for frontend concepts
-4. Contribute additional insights and examples
-
-## Continuous Learning
-This repository will be updated throughout the program with new learnings, challenges, and solutions.
+The application showcases a curated list of electronic products such as smartphones, laptops, home appliances, and accessories. Each product is displayed with essential details including name, price, category, image, and description. The long-term goal is to evolve this project into a fully functional E commerce platform.
 
 ---
-*Last Updated: January 26, 2026*
+
+## Purpose of the Project
+
+This project is designed to:
+
+* Apply concepts learned throughout the ALX Software Engineering Front End ProDev program
+* Demonstrate real-world frontend development practices
+* Show understanding of component based architecture in React
+* Practice working with structured data and static assets
+* Build a scalable foundation for future features such as cart, checkout, and authentication
+
+Kheir Electronics is developed under the **alx-project-nexus** as a hands on, production style project rather than a simple demo.
+
+---
+
+## Features Implemented
+
+* Product listing page with reusable product cards
+* Centralized product data management
+* Responsive layout (mobile-first approach)
+* Static product images served from the public directory
+* Clean and scalable project structure
+
+---
+
+## Tech Stack
+
+* **Next.js** – React framework for server-side rendering and routing
+* **React** – Component-based UI development
+* **TypeScript** – Type safety and better developer experience
+* **Tailwind CSS** – Utility-first styling
+* **Git & GitHub** – Version control and collaboration
+
+---
+
+## Project Structure
+
+```
+kheir-electronics/
+├── public/
+│   └── products/          # Product images
+|   └──...
+├── src/
+│   ├── app/               # Next.js app router
+│   │   ├── globals.css
+│   │   └── page.tsx
+|   |   └──cart/.
+|   |   └──checkout/..
+|   |   └──products/..
+│   │
+│   ├── components/
+│   │   └── layout/.        # Reusable UI components
+│   │   └── AddToCartButton.tsx
+│   │   └── CartBadge.tsx
+│   │   └── Header.tsx
+│   │   └── Navbar.tsx
+│   │   └── ProductCard.tsx
+│   │
+│   ├── lib/               # Shared logic and data
+│   │   └── products.ts
+│   │   └── cart.ts
+│
+├── tailwind.config.js
+├── package.json
+└── README.md
+```
+
+---
+
+## How Products Are Managed
+
+All product data is stored in:
+
+```
+src/lib/products.ts
+```
+
+Each product object includes:
+
+* `id`
+* `name`
+* `price`
+* `category`
+* `image`
+* `description`
+
+To add new products:
+
+1. Add the product image to `public/products/`
+2. Add a new product object in `src/lib/products.ts`
+3. Ensure the image path matches the filename exactly
+
+---
+
+## How to Run the Project Locally
+
+1. Clone the repository:
+
+```bash
+git clone <https://github.com/DibzDev/alx-project-nexus>
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and visit:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Current Limitations
+
+* Product grid layout is still being refined
+* No product detail pages yet
+* No cart or checkout functionality
+* No backend or database integration
+
+These limitations are intentional at this stage to focus on frontend foundations.
+
+---
+
+## Future Enhancements
+
+* Product details pages using dynamic routes
+* Category-based filtering
+* Shopping cart and checkout flow
+* Backend integration (database & API)
+* User authentication
+* Admin dashboard for product management
+
+---
+
+## Author
+
+**Tom Musyoka Mwaduka**
+ALX Software Engineering Front End ProDev Student
+
+---
+
+## Project Status
+
+**In Active Development**
+This project is continuously being improved as part of the ALX learning journey.

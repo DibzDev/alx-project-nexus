@@ -6,24 +6,24 @@ type Props = {
 
 export default function ProductCard({ product }: Props) {
   return (
-    <Link href={`/products/${product.id}`} className="block">
-      <div className="border rounded-lg bg-white p-4 hover:shadow-lg transition h-full flex flex-col">
+    <Link href={`/products/${product.id}`}>
+      <div className="bg-white border rounded-lg p-4 shadow-sm hover:shadow-md transition flex flex-col">
         
-        {/* IMAGE CONTAINER — FIXED HEIGHT */}
-        <div className="h-40 flex items-center justify-center mb-4">
+        
+        <div className="w-full h-48 flex items-center justify-center mb-4">
           <img
-            src={product.image}
-            alt={product.name}
-            className="max-h-full max-w-full object-contain"
-          />
+  src={product.image}
+  alt={product.name}
+  className="w-full h-48 object-contain mb-4"
+/>
+
         </div>
 
-        {/* TEXT */}
-        <h3 className="font-semibold text-lg mb-2 text-center">
+        <h3 className="font-semibold text-lg mb-1 text-center">
           {product.name}
         </h3>
 
-        <p className="text-yellow-600 font-bold text-center mt-auto">
+        <p className="text-yellow-600 font-bold text-center">
           KES {product.price.toLocaleString()}
         </p>
       </div>

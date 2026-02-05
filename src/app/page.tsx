@@ -4,13 +4,15 @@ import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
 
-const categories = ["all", "phones", "tvs", "kitchen", "appliances"];
+const categories = ["all", "smartphones", "tvs", "kitchen-appliances", "laptops", "home-appliances"];
 
 export default function HomePage() {
   const [category, setCategory] = useState("all");
   const [search, setSearch] = useState("");
+  const ITEMS_PER_PAGE = 10;
+const [page, setPage] = useState(1);
 
-  // ✅ Combined filtering
+
   const filteredProducts = products.filter((product) => {
     const matchesCategory =
       category === "all" || product.category === category;
@@ -21,6 +23,12 @@ export default function HomePage() {
 
     return matchesCategory && matchesSearch;
   });
+
+const paginatedProducts = filteredProducts.slice(
+  0,
+  page * ITEMS_PER_PAGE
+);
+
 
   return (
     <main>
@@ -62,10 +70,7 @@ export default function HomePage() {
           />
 
           {/* Categories */}
-          <div
-            id="categories"
-            className="flex gap-3 mb-10 overflow-x-auto"
-          >
+          <div id="categories" className="flex gap-3 mb-10 overflow-x-auto">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -81,18 +86,23 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Product grid */}
-<div className="w-full">
-  
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-    {filteredProducts.map((product) => (
-      <ProductCard key={product.id} product={product} />
-    ))}
+          {/* Product Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {paginatedProducts.map((product) => (
+  <ProductCard key={product.id} product={product} />
+))}
+          </div>
+{paginatedProducts.length < filteredProducts.length && (
+  <div className="text-center mt-10">
+    <button
+      onClick={() => setPage((prev) => prev + 1)}
+      className="px-6 py-2 border rounded hover:bg-gray-100"
+    >
+      Load More
+    </button>
   </div>
-</div>
+)}
 
-
-          {/* Empty State */}
           {filteredProducts.length === 0 && (
             <p className="text-center text-gray-500 mt-10">
               No products found

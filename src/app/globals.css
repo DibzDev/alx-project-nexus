@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* Base styles */
 html,
 body {
   scroll-behavior: smooth;
 }
 
-/* Utility overrides or custom styles can go here */
 section {
   padding: 4rem 2rem;
 }
@@ -86,7 +86,7 @@ section {
   color: #101820;
 }
 
-.products {
+/*.products {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: auto;
@@ -104,7 +104,7 @@ section {
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
-}
+}*/
 
 
 .product-card:hover {

@@ -38,6 +38,7 @@ Kheir Electronics is developed under the **alx-project-nexus** as a hands on, pr
 * **React** – Component-based UI development
 * **TypeScript** – Type safety and better developer experience
 * **Tailwind CSS** – Utility-first styling
+* **Vercel** - Production deployment platform
 * **Git & GitHub** – Version control and collaboration
 
 ---
@@ -106,7 +107,7 @@ To add new products:
 1. Clone the repository:
 
 ```bash
-git clone <https://github.com/DibzDev/alx-project-nexus>
+git clone https://github.com/DibzDev/alx-project-nexus
 ```
 
 2. Install dependencies:
@@ -127,7 +128,24 @@ npm run dev
 http://localhost:3000
 ```
 
+
+5. Production deployment platform:
+```bash
+npm run build
+```
 ---
+
+## Deployment
+
+* The project is deployed using Vercel, ensuring:
+
+* Fast global delivery
+
+* Automatic CI/CD on push
+
+* Optimized production builds
+
+Live Demo: (https://vercel.com/toms-projects-6ead9b3a/alx-project-nexus)
 
 ## Current Limitations
 
